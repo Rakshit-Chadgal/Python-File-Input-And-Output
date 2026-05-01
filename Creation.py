@@ -25,9 +25,30 @@ n = input("Enter a word to search in the file: ")
 search(file, n)'''
 
 #Q4: WAF to find in which line of the file does the word “learning”occur first. Print -1 if word not found.
-word = "learning"
-with open("practice.txt", "r") as f:
+'''def find():
+    word = "learning"
+    data = True
+    line_no = 1
+    with open("practice.txt", "r") as f:
+        while data:
+            data = f.readline()
+            if(word in data):
+                print(f"The word '{word}' occurs first in line number {line_no}.")
+                return
+            line_no += 1
+    return -1
+print(find())'''
+
+#Q5: From a file containing numbers separated by comma, print the count of even numbers.
+'''count = 0
+with open("numbers.txt", "w") as f:
+    f.write("1,2,3,4,5,6,7,8,9,10,45,56,78,90,100")
+with open("numbers.txt", "r") as f:
     data = f.read()
-    if(data.find(word) != -1):
-        print(f"The word '{word}' is found at index: {data.find(word)}")
-    else:        print(f"The word '{word}' is not found in the file.")
+    print(data)
+
+    nums = data.split(",")
+    for val in nums:
+        if int(val) % 2 == 0:
+            count += 1
+print(f"The count of even numbers in the file is: {count}")'''
